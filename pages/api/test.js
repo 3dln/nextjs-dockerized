@@ -13,7 +13,7 @@ const connect = async () => {
       resolve();
     }
 
-    await Mongoose.connect("mongodb://localhost:27017/mydb", {
+    await Mongoose.connect("mongodb://mongodb:27017/mydb", {
       useCreateIndex: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -24,7 +24,7 @@ const connect = async () => {
         resolve();
       })
       .catch((err) => {
-        console.log("error connecting to the database", err);
+        console.log("error connecting to the database.\n", err);
         reject();
       });
   });
